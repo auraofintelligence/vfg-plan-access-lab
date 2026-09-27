@@ -142,14 +142,9 @@ function wireForm() {
 function wireBackToTop() {
   const btn = $(".back-to-top");
   if (!btn) return;
-  const toggle = () => {
-    btn.classList.toggle("is-visible", window.scrollY > 240);
-  };
   btn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-  window.addEventListener("scroll", toggle, { passive: true });
-  toggle();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
