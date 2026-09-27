@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parks | VFG Plan Access Lab</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SB</span>
+      <span><strong>VFG Plan Access Lab</strong><small>Public seed list</small></span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="process.html">Process</a>
+      <a href="parks.html" aria-current="page">Parks</a>
+      <a href="packet.html">Packet demo</a>
+      <a href="licence.html">Licence</a>
+    </nav>
+  </header>
+  <p class="caution">Names and roles are taken from VFG public projects page as read on 27 September 2026, plus Windemere as the live Strange But True x VFG object. Councils are best-current desk guesses and must be confirmed in each packet.</p>
+  <main class="page-shell">
+    <p class="kicker">Seed cabinet</p>
+    <h1>The parks this lab starts with</h1>
+    <p class="lead">First wave is Barham, Finley, Shellharbour and Cowes: design trail or public minutes. Hold Newcastle Beach until handover. Windemere sits beside the set, not on the VFG marketing page.</p>
+    <div class="filters" role="toolbar" aria-label="Filter parks">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="first">First wave</button>
+      <button type="button" data-filter="NSW">NSW</button>
+      <button type="button" data-filter="VIC">Victoria</button>
+      <button type="button" data-filter="QLD">Queensland</button>
+    </div>
+    <div style="overflow:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Park</th>
+            <th>VFG role on the public card</th>
+            <th>Likely council</th>
+            <th>Access law to index</th>
+            <th>Priority</th>
+            <th>Train default</th>
+          </tr>
+        </thead>
+        <tbody id="park-rows"></tbody>
+      </table>
+    </div>
+    <p>Full unpublished list: email kieran@vfgskateparks.com.au, as the public projects page already says.</p>
+  </main>
+  <footer class="site-footer">
+    <p>VFG public website material remains VFG's. This table is a working index, not their portfolio.</p>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

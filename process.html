@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Process | VFG Plan Access Lab</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SB</span>
+      <span><strong>VFG Plan Access Lab</strong><small>Process</small></span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="process.html" aria-current="page">Process</a>
+      <a href="parks.html">Parks</a>
+      <a href="packet.html">Packet demo</a>
+      <a href="licence.html">Licence</a>
+    </nav>
+  </header>
+  <p class="caution">Legal information only. Access statutes differ by state. Copyright in drawings usually sits with the designer, not the council that holds a copy.</p>
+  <main class="page-shell">
+    <p class="kicker">Remote actions only</p>
+    <h1>The desk process</h1>
+    <p class="lead">The point is not a national CAD dump. The point is a repeatable packet that can travel from a VFG project card to a council email to an engine question without mixing rooms.</p>
+    <h2>1. Seed list</h2>
+    <p>Use only parks VFG has already published, plus Windemere as the live bid object. Source: <a href="https://www.skateparkconstruction.com.au/projects">skateparkconstruction.com.au/projects</a>. The page itself says the full list and referees are by email to Kieran.</p>
+    <h2>2. Packet before file</h2>
+    <p>Every artefact gets a sidecar before it is saved into a working folder. Required fields: source, holder versus copyright owner, form of access, licence words, train flag, date. If train is not yes, the file does not go in a training corpus.</p>
+    <h2>3. Public harvest</h2>
+    <p>Search the named council for the park, then Your Say / engagement, then minutes, then open data. Write the URL into the packet even when the find is only a location pin. Published concept reports still carry designer copyright. They are context, not a licence.</p>
+    <h2>4. Informal ask, then formal access</h2>
+    <p>Email parks or assets. Ask for as-constructed / WAE drawings of the named existing park, for research and community mapping, and ask what fee or licence they can offer. If that fails:</p>
+    <ul>
+      <li>NSW — GIPA Act 2009</li>
+      <li>Victoria — FOI Act 1982</li>
+      <li>Queensland (Windemere) — Right to Information Act 2009</li>
+    </ul>
+    <p>Copies of engineering drawings are often refused on copyright grounds. Inspection only is still a useful fact: the drawing exists, the owner can be named, the packet stays honest.</p>
+    <h2>5. Engine room</h2>
+    <p>The Australian Legal Engine indexes acts you already hold and answers by quotation. Suggested first questions, run locally:</p>
+    <div class="yaml">python -m engine ask "can a council give me a copy of engineering plans"
+python -m engine ask "copyright infringement copy of drawings under GIPA"
+python -m engine ask "right to information inspection only copyright" --prompt</div>
+    <p>Do not paste invented section numbers into the packet. Paste the engine citation packet, or a note that you have not indexed that act yet.</p>
+    <h2>6. Training gate</h2>
+    <p>Pass: facts, years, councils, contractor names already published, your own LiDAR of a public park, notes you typed from an inspection.</p>
+    <p>Stop: VFG construction sets, council engineering sheets, photos of drawings taken during inspection, commercial AI reuse of this lab itself (the Strange But True licence already forbids that).</p>
+    <h2>What stays out of this site</h2>
+    <p>Filled tender returnables, prices, private emails, unpublished VFG CAD, and anyone's personal information. Same public/private caution as the Windemere workspace.</p>
+  </main>
+  <footer class="site-footer">
+    <p>Strange But True Public Source Licence. Not legal advice.</p>
+  </footer>
+</body>
+</html>
