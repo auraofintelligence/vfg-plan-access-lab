@@ -1,6 +1,29 @@
 const state = { parks: [], filter: "all", current: null };
 const $ = (sel, root = document) => root.querySelector(sel);
 
+const NAV = [
+  ["index.html", "Home"],
+  ["process.html", "Process"],
+  ["parks.html", "Parks"],
+  ["trail.html", "Trail"],
+  ["tasks.html", "Tasks"],
+  ["mou.html", "MOU"],
+  ["eoi.html", "EOI"],
+  ["packet.html", "Packet"],
+  ["licence.html", "Licence"]
+];
+
+function wireSiteNav() {
+  const here = (location.pathname.split("/").pop() || "index.html");
+  const nav = document.querySelector("header nav") || document.querySelector("nav");
+  if (!nav) return;
+  nav.setAttribute("aria-label", "Primary");
+  nav.innerHTML = NAV.map(([href, label]) => {
+    const current = here === href || (here === "" && href === "index.html");
+    return `<a href="${href}"${current ? " aria-current=\"page\"" : ""}>${label}</a>`;
+  }).join("");
+}
+
 async function loadParks() {
   if (!$("#park-rows") && !$("#park-list")) return;
   const res = await fetch("data/parks.json");
@@ -51,33 +74,34 @@ function selectPark(id) {
   document.querySelectorAll("#park-list button").forEach((b) => {
     b.classList.toggle("active", b.dataset.id === id);
   });
-  $("#f-name").value = park.name;
-  $("#f-state").value = park.state;
-  $("#f-council").value = park.likelyCouncil;
-  $("#f-law").value = park.accessLaw;
-  $("#f-role").value = park.vfgRole;
-  $("#f-source").value = "public-page";
-  $("#f-form").value = "public-pdf-or-photo";
-  $("#f-owner").value = park.vfgRole.toLowerCase().includes("design") ? "VFG (design likely)" : "Designer or council — confirm";
-  $("#f-train").value = "no";
-  $("#f-notes").value = park.notes;
-  renderYaml();
+  const set = (id, v) => { const el = $(id); if (el) el.value = v; };
+  set("#f-name", park.name);
+  set("#f-state", park.state);
+  set("#f-council", park.likelyCouncil);
+  set("#f-law", park.accessLaw);
+  set("#f-role", park.vfgRole);
+  set("#f-source", "public-page");
+  set("#f-form", "public-pdf-or-photo");
+  set("#f-owner", park.vfgRole.toLowerCase().includes("design") ? "VFG (design likely)" : "Designer or council — confirm");
+  set("#f-train", "no");
+  set("#f-notes", park.notes);
+  if ($("#yaml")) renderYaml();
 }
 
 function packetObject() {
   const park = state.current || {};
   return {
     id: park.id || "unnamed",
-    name: $("#f-name").value,
-    state: $("#f-state").value,
-    council: $("#f-council").value,
-    access_law: $("#f-law").value,
-    vfg_role: $("#f-role").value,
-    source: $("#f-source").value,
-    form_of_access: $("#f-form").value,
-    copyright_owner: $("#f-owner").value,
-    train: $("#f-train").value,
-    notes: $("#f-notes").value,
+    name: $("#f-name")?.value,
+    state: $("#f-state")?.value,
+    council: $("#f-council")?.value,
+    access_law: $("#f-law")?.value,
+    vfg_role: $("#f-role")?.value,
+    source: $("#f-source")?.value,
+    form_of_access: $("#f-form")?.value,
+    copyright_owner: $("#f-owner")?.value,
+    train: $("#f-train")?.value,
+    notes: $("#f-notes")?.value,
     collected: new Date().toISOString().slice(0, 10),
     method: "Luke's Relevance 2012 — object of life first, then threads",
     engine: "australian-legal-engine asks and cites; this packet does not invent law"
@@ -85,6 +109,7 @@ function packetObject() {
 }
 
 function renderYaml() {
+  if (!$("#yaml")) return;
   const o = packetObject();
   const gate = o.train === "yes" ? "OPEN" : "CLOSED";
   const klass = o.train === "yes" ? "gate-yes" : "gate-no";
@@ -100,7 +125,7 @@ form_of_access: ${o.form_of_access}
 copyright_owner: ${o.copyright_owner}
 train: ${o.train}
 notes: >
-  ${o.notes.replace(/\n/g, "\n  ")}
+  ${(o.notes || "").replace(/\n/g, "\n  ")}
 collected: ${o.collected}
 method: "${o.method}"
 engine: "${o.engine}"`;
@@ -170,6 +195,7 @@ async function loadTrail() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  wireSiteNav();
   loadParks();
   loadTrail();
   wireFilters();
