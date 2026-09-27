@@ -3,8 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MOU | VFG Plan Access Lab</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=nav2">
+  <title>Memorandum of Understanding | Strange But True x VFG</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=nav3">
+  <style>
+    .doc-sheet{max-width:720px;margin:24px auto 48px;background:#fff;color:#111;border:1px solid #cfc6b8;box-shadow:0 12px 40px rgba(27,23,20,.12);padding:36px 32px 48px;font-family:"Times New Roman",Times,serif;font-size:16px;line-height:1.45}
+    .letterhead{text-align:center;border-bottom:2px solid #111;padding-bottom:12px;margin-bottom:22px}
+    .letterhead .org{letter-spacing:.14em;font-size:12px;text-transform:uppercase}
+    .letterhead h1{font-size:26px;margin:8px 0 4px}
+    .letterhead .sub{font-style:italic;font-size:15px}
+    .doc-sheet h2{font-size:16px;margin:18px 0 6px}
+    .sign-line{margin:22px 0 4px;border-bottom:1px solid #111;height:28px;max-width:320px}
+    @media print{header,.caution,.page-pager,.back-to-top,footer,.no-print{display:none!important}.doc-sheet{box-shadow:none;border:0;margin:0;max-width:none}}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -21,19 +31,47 @@
       <a href="licence.html">Licence</a>
     </nav>
   </header>
-  <p class="caution"><strong>Not legal advice.</strong> Licence sentence inside the MOU is what lets CAD into a training run.</p>
-  <main class="page-shell">
-    <p class="kicker">After the calls</p>
-    <h1>Memorandum of understanding</h1>
-    <p>VFG keeps the CAD. Strange But True gets a licence to train a local model for tenders and maintenance. Windemere tender stays separate. First parks: Black Head, Cowes, Bathurst, Shellharbour 2018.</p>
-    <p>Full draft stays on this page in the repo. Send Kez the cover note from Tasks if you want him to read it first.</p>
-    <nav class="page-pager">
-      <a href="tasks.html">Previous: Tasks</a>
-      <a class="pager-next" href="eoi.html">Next: EOI</a>
-    </nav>
-  </main>
+  <p class="caution no-print"><strong>Not legal advice.</strong> This is a document. Print or Save PDF and send it to Kez.</p>
+  <p class="no-print" style="width:min(1100px,calc(100% - 28px));margin:12px auto;font-family:system-ui,sans-serif"><button type="button" onclick="window.print()">Print / Save PDF</button></p>
+  <article class="doc-sheet">
+    <div class="letterhead">
+      <div class="org">Strange But True</div>
+      <h1>Memorandum of Understanding</h1>
+      <div class="sub">Licensed use of completed-park CAD and as-constructed drawings</div>
+    </div>
+    <p>Between</p>
+    <p><strong>Luke Nathan Hayes</strong> trading as Strange But True<br>Amity, Minjerribah / North Stradbroke Island<br>(Luke)</p>
+    <p>and</p>
+    <p><strong>VFG Skateparks</strong><br>attention Kieran (Kez)</p>
+    <p>Date: ____________________</p>
+    <h2>1. What this is</h2>
+    <p>We already work together on Windemere Road Park, Redland City. This memorandum records a second, related piece of work: a licensed local model trained on a small set of parks VFG has already built, so future tenders and maintenance are not from a blank page.</p>
+    <h2>2. Two rooms</h2>
+    <p>Windemere tender files, prices and returnables stay in the bid room. This memorandum does not change that tender and does not authorise use of bid-room files for training.</p>
+    <h2>3. First parks</h2>
+    <p>Black Head (Hallidays Point); Cowes; Bathurst; Shellharbour 2018 rebuild. Further parks may be added in writing, including by email or text.</p>
+    <h2>4. What VFG will try to provide</h2>
+    <p>For each named park, as held: native CAD (DWG / DXF / 3D); as-constructed / works-as-executed PDF; who designed it; who built it; year opened or rebuilt; and whether copyright sits with VFG or the council. If a file cannot leave the office, a supervised copy or extract is enough to start.</p>
+    <h2>5. Licence</h2>
+    <p>VFG keeps ownership of its drawings and CAD. VFG licences Luke to keep copies in a closed working folder; train a local Strange But True model on those copies; and use that model for tendering, set-out, maintenance and digital-twin work.</p>
+    <p>Luke will not put the CAD or WAE sheets on the public web; will not hand the raw files to a third-party training company; and will not treat this as a right to rebuild or on-sell VFG designs.</p>
+    <h2>6. What Luke will do</h2>
+    <p>Packet each file (source, date, train flag). Training stays off until this memorandum is signed or Kez confirms the same words in writing. Credit VFG when the work is shown in community or tender material, unless VFG asks otherwise.</p>
+    <h2>7. Money</h2>
+    <p>No fee is set in this note. If a park-by-park fee or a share of later work is agreed, that will be written as a short add-on.</p>
+    <h2>8. Time</h2>
+    <p>Starts when both have signed or clearly agreed in writing. Either side may end it with 14 days notice. Copies already lawfully used to train may stay in the local model. Raw CAD is returned or deleted if VFG asks.</p>
+    <h2>9. No extras</h2>
+    <p>This is not a partnership, employment, joint venture or exclusive deal. It is not a construction contract. It is not legal advice.</p>
+    <p><strong>Signed</strong></p>
+    <div class="sign-line"></div>
+    <p>Luke Nathan Hayes<br>Strange But True<br>Date ________</p>
+    <div class="sign-line"></div>
+    <p>Kieran<br>VFG Skateparks<br>Date ________</p>
+  </article>
+  <nav class="page-pager no-print"><a href="tasks.html">Previous: Tasks</a><a class="pager-next" href="eoi.html">Next: EOI</a></nav>
   <button class="back-to-top" type="button" aria-label="Back to top">^</button>
-  <footer class="site-footer"><p>Not a contract sale of drawings.</p></footer>
-  <script src="assets/js/app.js?v=nav2"></script>
+  <footer class="site-footer no-print"><p>Use Print to make a PDF for Kez.</p></footer>
+  <script src="assets/js/app.js?v=nav3"></script>
 </body>
 </html>

@@ -3,8 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EOI | VFG Plan Access Lab</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=nav2">
+  <title>Expression of Interest | Strange But True x VFG</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=nav3">
+  <style>
+    .doc-sheet{max-width:720px;margin:24px auto 48px;background:#fff;color:#111;border:1px solid #cfc6b8;box-shadow:0 12px 40px rgba(27,23,20,.12);padding:36px 32px 48px;font-family:"Times New Roman",Times,serif;font-size:16px;line-height:1.45}
+    .letterhead{text-align:center;border-bottom:2px solid #111;padding-bottom:12px;margin-bottom:22px}
+    .letterhead .org{letter-spacing:.14em;font-size:12px;text-transform:uppercase}
+    .letterhead h1{font-size:26px;margin:8px 0 4px}
+    .letterhead .sub{font-style:italic;font-size:15px}
+    .doc-sheet h2{font-size:16px;margin:18px 0 6px}
+    .sign-line{margin:22px 0 4px;border-bottom:1px solid #111;height:28px;max-width:320px}
+    @media print{header,.caution,.page-pager,.back-to-top,footer,.no-print{display:none!important}.doc-sheet{box-shadow:none;border:0;margin:0;max-width:none}}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -21,18 +31,35 @@
       <a href="licence.html">Licence</a>
     </nav>
   </header>
-  <p class="caution"><strong>Not legal advice.</strong> An EOI is interest, not a licence.</p>
-  <main class="page-shell">
-    <p class="kicker">If he needs something to forward</p>
-    <h1>Expression of interest</h1>
-    <p>Use this when Kez wants a one-pager. Switch to the MOU when files are about to move. Do not train on CAD from an EOI alone.</p>
-    <nav class="page-pager">
-      <a href="mou.html">Previous: MOU</a>
-      <a class="pager-next" href="packet.html">Next: Packet</a>
-    </nav>
-  </main>
+  <p class="caution no-print"><strong>Not legal advice.</strong> An EOI is interest, not a licence. Print or Save PDF if Kez needs a one-pager to forward.</p>
+  <p class="no-print" style="width:min(1100px,calc(100% - 28px));margin:12px auto;font-family:system-ui,sans-serif"><button type="button" onclick="window.print()">Print / Save PDF</button></p>
+  <article class="doc-sheet">
+    <div class="letterhead">
+      <div class="org">Strange But True</div>
+      <h1>Expression of Interest</h1>
+      <div class="sub">Licensed use of completed-park CAD for local-model training</div>
+    </div>
+    <p>From</p>
+    <p><strong>Luke Nathan Hayes</strong> trading as Strange But True<br>Amity, Minjerribah / North Stradbroke Island</p>
+    <p>To</p>
+    <p><strong>VFG Skateparks</strong><br>attention Kieran</p>
+    <p>Date: ____________________</p>
+    <h2>1. Interest</h2>
+    <p>I am interested in a working arrangement under which VFG names a first set of completed parks and provides as-constructed drawings and native CAD so Strange But True can train a local model for future tenders, set-out, maintenance and digital-twin work.</p>
+    <h2>2. Suggested first parks</h2>
+    <p>Black Head (Hallidays Point); Cowes; Bathurst; Shellharbour 2018 rebuild.</p>
+    <h2>3. Files sought</h2>
+    <p>Native CAD (DWG / DXF / 3D if held); as-constructed / works-as-executed PDF; designer; builder; year; who holds copyright.</p>
+    <h2>4. Limits</h2>
+    <p>Files stay off the public web. VFG keeps ownership. No on-sale of VFG designs. Windemere Road Park tender files stay in the bid room and are not part of this expression of interest.</p>
+    <h2>5. Next step</h2>
+    <p>If VFG is interested, we move to the short memorandum of understanding and then exchange files. Training does not start on an expression of interest alone.</p>
+    <div class="sign-line"></div>
+    <p>Luke Nathan Hayes<br>Strange But True<br>Date ________</p>
+  </article>
+  <nav class="page-pager no-print"><a href="mou.html">Previous: MOU</a><a class="pager-next" href="packet.html">Next: Packet</a></nav>
   <button class="back-to-top" type="button" aria-label="Back to top">^</button>
-  <footer class="site-footer"><p>Interest only.</p></footer>
-  <script src="assets/js/app.js?v=nav2"></script>
+  <footer class="site-footer no-print"><p>Use Print to make a PDF for Kez.</p></footer>
+  <script src="assets/js/app.js?v=nav3"></script>
 </body>
 </html>
