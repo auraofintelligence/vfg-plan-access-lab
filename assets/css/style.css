@@ -219,7 +219,7 @@ th { background: #efe8dc; font-weight: 600; }
 .gate-yes { color: #cde8d4; }
 .gate-no { color: #ffd0c8; }
 .site-footer {
-  padding: 12px 0 88px;
+  padding: 12px 72px 28px 0;
   color: var(--muted);
   font-family: system-ui, sans-serif;
   font-size: 13px;
