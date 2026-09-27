@@ -147,8 +147,31 @@ function wireBackToTop() {
   });
 }
 
+async function loadTrail() {
+  const root = $("#trail-list");
+  if (!root) return;
+  const res = await fetch("data/trail.json");
+  const items = await res.json();
+  root.innerHTML = items.map((item) => `
+    <article class="trail-card">
+      <h2>${item.name}</h2>
+      ${item.place ? `<p>${item.place}</p>` : ""}
+      ${item.maps ? `<p><a href="${item.maps}" rel="noopener noreferrer">Open map search</a></p>` : ""}
+      <ul>
+        ${(item.links || []).map((l) => `
+          <li>
+            <a href="${l.url}" rel="noopener noreferrer">${l.label}</a>
+            <span class="badge">${l.kind}</span>
+          </li>
+        `).join("")}
+      </ul>
+    </article>
+  `).join("");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   loadParks();
+  loadTrail();
   wireFilters();
   wireForm();
   wireBackToTop();
