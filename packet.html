@@ -3,94 +3,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Packet demo | VFG Plan Access Lab</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Packet | VFG Plan Access Lab</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=nav2">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html">
-      <span class="brand-mark">SB</span>
-      <span><strong>VFG Plan Access Lab</strong><small>Packet demo</small></span>
-    </a>
-    <nav>
+    <a class="brand" href="index.html"><span class="brand-mark">SB</span><span><strong>VFG Plan Access Lab</strong><small>Packet</small></span></a>
+    <nav aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="process.html">Process</a>
       <a href="parks.html">Parks</a>
       <a href="trail.html">Trail</a>
-      <a href="packet.html" aria-current="page">Packet demo</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="mou.html">MOU</a>
+      <a href="eoi.html">EOI</a>
+      <a href="packet.html" aria-current="page">Packet</a>
       <a href="licence.html">Licence</a>
     </nav>
   </header>
-  <p class="caution">Demo only. Changing Train to yes in the browser does not create a licence. Download stays on your machine. Outputs you type belong to you under the Strange But True Public Source Licence.</p>
+  <p class="caution">Demo only. Train stays no until a written note or MOU exists.</p>
   <main class="page-shell">
     <p class="kicker">Provenance before files</p>
     <h1>Fill a packet, then decide the gate.</h1>
-    <p class="lead">Pick a VFG-listed park. The form writes a sidecar you can keep next to notes. The training gate stays closed unless you deliberately open it.</p>
     <div class="packet">
-      <div>
-        <h2 style="margin-top:0">Parks</h2>
-        <div id="park-list" class="park-list"></div>
-      </div>
+      <div><h2 style="margin-top:0">Parks</h2><div id="park-list" class="park-list"></div></div>
       <div class="panel">
         <form id="packet-form" class="packet-form">
-          <label for="f-name">Park</label>
-          <input id="f-name">
-          <label for="f-state">State</label>
-          <input id="f-state">
-          <label for="f-council">Council</label>
-          <input id="f-council">
-          <label for="f-law">Access law to index</label>
-          <input id="f-law">
-          <label for="f-role">VFG public role</label>
-          <input id="f-role">
+          <label for="f-name">Park</label><input id="f-name">
+          <label for="f-state">State</label><input id="f-state">
+          <label for="f-council">Council</label><input id="f-council">
+          <label for="f-law">Access law</label><input id="f-law">
+          <label for="f-role">VFG role</label><input id="f-role">
           <label for="f-source">Source</label>
-          <select id="f-source">
-            <option value="public-page">Public page</option>
-            <option value="council-minutes">Council minutes</option>
-            <option value="informal-email">Informal council email</option>
-            <option value="gipa-rti-inspection">GIPA / RTI / FOI inspection</option>
-            <option value="gipa-rti-copy">GIPA / RTI / FOI copy</option>
-            <option value="vfg-licence">Written VFG licence</option>
-            <option value="own-scan">Own scan of the built park</option>
-          </select>
+          <select id="f-source"><option value="public-page">Public page</option><option value="vfg-licence">Written VFG licence</option><option value="own-scan">Own scan</option></select>
           <label for="f-form">Form of access</label>
-          <select id="f-form">
-            <option value="public-pdf-or-photo">Public PDF or photo</option>
-            <option value="notes-only">Notes only</option>
-            <option value="inspection-only">Inspection only</option>
-            <option value="paid-copy">Paid copy</option>
-            <option value="licensed-file">Licensed file</option>
-            <option value="own-geometry">Own geometry</option>
-          </select>
-          <label for="f-owner">Copyright owner (working guess)</label>
-          <input id="f-owner">
+          <select id="f-form"><option value="notes-only">Notes only</option><option value="licensed-file">Licensed file</option><option value="own-geometry">Own geometry</option></select>
+          <label for="f-owner">Copyright owner</label><input id="f-owner">
           <label for="f-train">Train</label>
-          <select id="f-train">
-            <option value="no">no</option>
-            <option value="facts-only">facts-only</option>
-            <option value="own-scan-only">own-scan-only</option>
-            <option value="yes">yes — only with a written licence</option>
-          </select>
-          <label for="f-notes">Notes</label>
-          <textarea id="f-notes"></textarea>
-          <div class="actions">
-            <button type="button" id="download-packet">Download JSON</button>
-            <button type="button" class="ghost" id="copy-packet">Copy packet</button>
-          </div>
+          <select id="f-train"><option value="no">no</option><option value="facts-only">facts-only</option><option value="own-scan-only">own-scan-only</option><option value="yes">yes — written licence</option></select>
+          <label for="f-notes">Notes</label><textarea id="f-notes"></textarea>
+          <div class="actions"><button type="button" id="download-packet">Download JSON</button><button type="button" class="ghost" id="copy-packet">Copy packet</button></div>
         </form>
-        <h3>Sidecar</h3>
         <pre class="yaml" id="yaml"></pre>
       </div>
     </div>
-    <nav class="page-pager" aria-label="Page sequence">
-      <a href="trail.html">Previous: Public trail</a>
+    <nav class="page-pager">
+      <a href="eoi.html">Previous: EOI</a>
       <a class="pager-next" href="licence.html">Next: Licence</a>
     </nav>
   </main>
   <button class="back-to-top" type="button" aria-label="Back to top">^</button>
-  <footer class="site-footer">
-    <p>Packets you export are yours. Third-party plans are not.</p>
-  </footer>
-  <script src="assets/js/app.js"></script>
+  <footer class="site-footer"><p>Packets you export are yours.</p></footer>
+  <script src="assets/js/app.js?v=nav2"></script>
 </body>
 </html>
